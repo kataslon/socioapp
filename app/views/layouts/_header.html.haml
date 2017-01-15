@@ -1,0 +1,18 @@
+.navbar.navbar-inverse.navbar-fixed-top
+  .container
+    .navbar-header
+      = link_to 'Socioapp', root_url, id: 'logo'
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        - if current_user
+          %li
+            .logged
+              Logged in as
+              %strong= current_user.email
+          %li
+            = link_to 'Logout', log_out_path, method: :delete
+        - else
+          %li
+            = link_to 'Login', log_in_path
+          %li
+            = link_to 'Sign_Up', sign_up_path

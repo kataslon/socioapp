@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe SessionsController, type: :controller do
+RSpec.describe ApplicationController, type: :controller do
 
   describe 'current_user' do
     let(:user) { User.create email: 'kataslon@yandex.ru', password: '123456' }

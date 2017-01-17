@@ -7,6 +7,8 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }
   validates_confirmation_of :password
 
+  has_many :messages
+
   def self.authenticate(email, password)
     user =  find_by_email(email)
     user if user && user.password == password

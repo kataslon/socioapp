@@ -11,6 +11,8 @@
               %strong= current_user.email
           %li
             = link_to 'Logout', log_out_path, method: :delete
+          %li
+            = link_to 'Change password', edit_user_path(current_user)
         - else
           %li
             = link_to 'Login', log_in_path

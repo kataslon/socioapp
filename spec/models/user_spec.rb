@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let!(:user) { User.create email: 'kataslon@yandex.ru', password: '123456', password_confirmation: '123456' }
+  let!(:user) { FactoryGirl.create :user }
 
   it 'should not allow to create another user with the same email' do
-    another_user = User.create email: 'kataslon@yandex.ru', password: '123456', password_confirmation: '123456'
+    another_user = User.create email: user.email, password: '123456', password_confirmation: '123456'
     expect( another_user.errors.full_messages ).to eq ["Email has already been taken"]
   end
 

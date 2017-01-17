@@ -26,6 +26,12 @@ gem 'database_cleaner'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
+  gem 'ffaker',        '~> 2.2'
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'capybara-screenshot'
 end
 
 group :development do

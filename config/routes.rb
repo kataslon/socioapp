@@ -8,5 +8,5 @@ Rails.application.routes.draw do
     resources :messages
   end
 
-  root to: 'users#new'
+  root to: 'messages#index'
 end

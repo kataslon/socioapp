@@ -1,2 +1,7 @@
-%h1 Messages#index
-%p Find me in app/views/messages/index.html.haml
+.container
+  .page-header
+    %h1{align: "center"} Messages
+%div
+  = render messages
+%div
+  = link_to 'New message', new_user_message_path(user)

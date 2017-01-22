@@ -1,0 +1,14 @@
+%div
+  = owner(message).email
+%div
+  title:
+  = message.title
+%div
+  text:
+  = message.text
+%br
+%div
+  - if current_user == owner(message)
+    = link_to 'Edit', edit_user_message_path(user, message)
+    = link_to 'Delete', user_message_path(user, message), method: :delete
+%br

@@ -5,6 +5,9 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def index
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
@@ -32,6 +35,11 @@ class UsersController < ApplicationController
   helper_method :user
   def user
     @user ||= User.find_or_initialize_by(id: params[:id])
+  end
+
+  helper_method :users
+  def users
+    @users ||= User.all
   end
 
   def user_params
